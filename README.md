@@ -3,7 +3,9 @@
 ## Project overview
 
 This repo is a demostration to the course Computer Vision - a course of the Nanodegree program Self Driving Car Engineer.
-![](img/animation2.gif)
+|  Demo 1 | Demo 2     | 
+| -------------- | -------------- | 
+|  ![](img/animation2.gif) |![](img/animation2.gif) |
 ## Data
 
 For this project, the data from the [Waymo Open dataset](https://waymo.com/open/) is being used.
@@ -67,7 +69,7 @@ You are downloading 100 files (unless you changed the `size` parameter) so be pa
 
 ### Exploratory Data Analysis
 
-####Qualitative
+#### Qualitative
 
 The above images are some samples from the dataset used in this project.
 
@@ -75,6 +77,10 @@ The above images are some samples from the dataset used in this project.
 | -------------- | -------------- | --- |
  | ![](img/im4.png) | ![](img/im5.png) | ![](img/im7.png) |
 
+To have a bigger dataset for training, some augmentations were made and some samples are shown as below:
+  |  ![](img/aug1.png) | ![](img/aug2.png)   | ![](img/aug3.png) |
+| -------------- | -------------- |------- |
+| ![](img/aug4.png) | ![](img/aug5.png) | ![](img/aug6.png) |
 #### Quantitative
 
 Amongst all images in the dataset, 30000 samples were taken out for an analysis:
@@ -137,27 +143,24 @@ To monitor the training, you can launch a tensorboard instance by running `pytho
 ### Reference Experiments
 There are 2 experiments carried out:
 
-- The first experiment used the default configuration and was trained for 6 steps only.
-- The second experiment was trained with some mofications of the configuration.
+- The first experiment used the default configuration and was trained for 6 steps only. (pipline_0.config)
+- The second experiment was trained with some modifications of the configuration. (pipeline_2.config)
+- The third experiment was trained with some modifications of the configuration. (pipeline_4.config)
 
-|  1st experiment | 2nd experiment     |
-| -------------- | -------------- |
-| ![](img/animation0.gif) | ![](img/animation2.gif) |
+|  1st experiment | 2nd experiment     | 3rd experiment| 
+| -------------- | -------------- | ------|
+| ![](img/animation0.gif) | ![](img/animation2.gif) |![](img/animation2.gif) |
 
 Training statistics for 1st experiment:
 |  ![](img/0_detection_box_precision.png) | ![](img/0_detection_box_recall.png)   | ![](img/0_loss.png) |
 | -------------- | -------------- |------- |
-| !![](img/0_learn_rate.png) | !![](img/0_steps_per_sec.png) |
-
-
-
-
+| ![](img/0_learn_rate.png) | ![](img/0_steps_per_sec.png) |
 
 
 Training statistics for 2nd experiment:
 |  ![](img/2_detection_box_precision.png) | ![](img/2_detection_box_recall.png)   | ![](img/2_loss.png) |
 | -------------- | -------------- |------- |
-| !![](img/2_learn_rate.png) | !![](img/2_steps_per_sec.png) |
+| ![](img/2_learn_rate.png) | ![](img/2_steps_per_sec.png) |
 
   
 ### Improve on the reference
@@ -186,6 +189,65 @@ The following parameters were modified:
   ```
   num_steps: 2500 -> 10000
   ```
+
+There are some moodifications made from 2nd experiment to 3rd experiment.
+These changes involve various data augmentations:
+  
+  ```
+  data_augmentation_options { 
+    random_horizontal_flip { 
+      keypoint_flip_permutation: 1 
+      keypoint_flip_permutation: 0 
+      keypoint_flip_permutation: 2 
+      keypoint_flip_permutation: 3 
+      keypoint_flip_permutation: 5 
+      keypoint_flip_permutation: 4 
+      probability: 0.5 
+    } 
+  } 
+  data_augmentation_options { 
+    random_rotation90 { 
+        keypoint_rot_permutation: 3 
+        keypoint_rot_permutation: 0 
+        keypoint_rot_permutation: 1 
+        keypoint_rot_permutation: 2 
+        probability: 0.1 
+    } 
+  } 
+  data_augmentation_options { 
+    random_black_patches { 
+        max_black_patches: 10 
+        probability: 0.50 
+        size_to_image_ratio: 0.12 
+    } 
+  } 
+  data_augmentation_options { 
+    random_adjust_brightness { 
+        max_delta: 0.2 
+    } 
+  } 
+  data_augmentation_options { 
+    random_adjust_contrast { 
+        min_delta: 0.7 max_delta: 1.1 
+    } 
+  } 
+  data_augmentation_options { 
+    random_adjust_hue { 
+        max_delta: 0.01 
+    } 
+  } 
+  data_augmentation_options { 
+    random_adjust_saturation { 
+        min_delta: 0.75 max_delta: 1.15 
+    } 
+  } 
+  data_augmentation_options { 
+    random_distort_color { 
+        color_ordering: 1 
+     } 
+  }
+  ```
+  
 
 ### Future Work
 - The model used in this project is based on the ResNet architecture. It's also interesting to investigate other detection architectures.
