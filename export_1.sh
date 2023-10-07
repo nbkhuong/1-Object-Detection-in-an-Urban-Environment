@@ -1,0 +1,1 @@
+python experiments/exporter_main_v2.py --input_type image_tensor --pipeline_config_path experiments/experiment_1/pipeline_1.config --trained_checkpoint_dir experiments/experiment_1/ --output_directory experiments/experiment_1/exported

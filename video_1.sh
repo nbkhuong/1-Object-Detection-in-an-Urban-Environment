@@ -1,0 +1,1 @@
+python inference_video.py --labelmap_path label_map.pbtxt --model_path experiments/experiment_1/exported/saved_model --tf_record_path data/train/segment-10500357041547037089_1474_800_1494_800_with_camera_labels.tfrecord --config_path experiments/experiment_1/pipeline_1.config --output_path experiments/experiment_1/animation_1.gif
