@@ -3,7 +3,7 @@
 ## Project overview
 
 This repo is a demostration to the course Computer Vision - a course of the Nanodegree program Self Driving Car Engineer.
-
+![](img/animation2.gif)
 ## Data
 
 For this project, the data from the [Waymo Open dataset](https://waymo.com/open/) is being used.
@@ -39,7 +39,6 @@ experiments/
     - label_map.pbtxt
     ...
 ```
-
 ## Setup
 
 ### Local Setup
@@ -147,16 +146,20 @@ There are 2 experiments carried out:
 | ![](img/animation0.gif) | ![](img/animation2.gif) |
 
 Training statistics for 1st experiment:
-![](img/0_detection_box_precision.png)
-![](img/0_detection_box_recall.png)
-![](img/0_loss.png)
-![](img/0_learn_rate.png) ![](img/0_steps_per_sec.png)
+|  ![](img/0_detection_box_precision.png) | ![](img/0_detection_box_recall.png)   | ![](img/0_loss.png) |
+| -------------- | -------------- |------- |
+| !![](img/0_learn_rate.png) | !![](img/0_steps_per_sec.png) |
+
+
+
+
+
 
 Training statistics for 2nd experiment:
-![](img/2_detection_box_precision.png)
-![](img/2_detection_box_recall.png)
-![](img/2_loss.png)
-![](img/2_learn_rate.png) ![](img/0_steps_per_sec.png)
+|  ![](img/2_detection_box_precision.png) | ![](img/2_detection_box_recall.png)   | ![](img/2_loss.png) |
+| -------------- | -------------- |------- |
+| !![](img/2_learn_rate.png) | !![](img/2_steps_per_sec.png) |
+
   
 ### Improve on the reference
 
@@ -186,3 +189,6 @@ The following parameters were modified:
   ```
 
 ### Future Work
+- The model used in this project is based on the ResNet architecture. It's also interesting to investigate other detection architectures.
+
+- The project is targeted at detecting only 3 objects (traffic participants). There is possibility to extend the detector to detect more objects rather than just 3.
