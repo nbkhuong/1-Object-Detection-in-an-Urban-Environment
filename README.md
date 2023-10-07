@@ -71,10 +71,9 @@ You are downloading 100 files (unless you changed the `size` parameter) so be pa
 
 The above images are some samples from the dataset used in this project.
 
-| ![](img/im1.png) | ![](img/im2.png) |
-| -------------- | -------------- |
-| ![](img/im3.png) | ![](img/im4.png) |
-| ![](img/im5.png) | ![](img/im7.png) |
+| ![](img/im1.png) | ![](img/im2.png) | ![](img/im3.png)|
+| -------------- | -------------- | --- |
+ | ![](img/im4.png) | ![](img/im5.png) | ![](img/im7.png) |
 
 #### Quantitative
 
