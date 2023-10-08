@@ -144,8 +144,8 @@ To monitor the training, you can launch a tensorboard instance by running `pytho
 There are 2 experiments carried out:
 
 - The first experiment used the default configuration and was trained for 6 steps only. (pipline_0.config)
-- The second experiment was trained with some modifications of the configuration. (pipeline_2.config)
-- The third experiment was trained with some modifications of the configuration. (pipeline_4.config)
+- The second experiment was using the same configuration from 1st experiment but with longer iterations. (pipeline_2.config)
+- The third experiment was using the same configure from 2nd experiment but with many more augmentations samples. (pipeline_4.config)
 
 |  1st experiment | 2nd experiment     | 3rd experiment| 
 | -------------- | -------------- | ------|
@@ -162,7 +162,16 @@ Training statistics for 2nd experiment:
 | -------------- | -------------- |------- |
 | ![](img/2_learn_rate.png) | ![](img/2_steps_per_sec.png) |
 
-  
+Training statistics for 3rd experiment:
+|  ![](img/4_detection_box_precision.png) | ![](img/4_detection_box_recall.png)   | ![](img/4_loss.png) |
+| -------------- | -------------- |------- |
+| ![](img/4_learn_rate.png) | ![](img/4_steps_per_sec.png) |
+
+Training statistics from 3 experiments altogether:
+|  ![](img/_detection_box_precision.png) | ![](img/_detection_box_recall.png)   | ![](img/_loss.png) |
+| -------------- | -------------- |------- |
+
+
 ### Improve on the reference
 
 There are some moodifications made from 1st experiment to 2nd experiment.
