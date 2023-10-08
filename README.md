@@ -5,7 +5,7 @@
 This repo is a demostration to the course Computer Vision - a course of the Nanodegree program Self Driving Car Engineer.
 |  Demo 1 | Demo 2     | 
 | -------------- | -------------- | 
-|  ![](img/animation2.gif) |![](img/animation2.gif) |
+|  ![](img/animation2.gif) |![](img/animation4.gif) |
 ## Data
 
 For this project, the data from the [Waymo Open dataset](https://waymo.com/open/) is being used.
